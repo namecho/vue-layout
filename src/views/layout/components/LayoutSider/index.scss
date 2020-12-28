@@ -1,0 +1,27 @@
+.layout-sider {
+  .logo {
+    width: 160px;
+    height: 40px;
+    margin: 20px;
+    background: #334453;
+    border-radius: 3px;
+  }
+  .sider-menu {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    .menu-item {
+      color: #bcc9d4;
+      line-height: 36px;
+      padding: 0 20px;
+      cursor: pointer;
+      transition: color 0.3s ease, background 0.3s ease;
+      user-select: none;
+      &:hover,
+      &.active {
+        color: #fff;
+        background: #3a84fc;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.layout-header {
+  .title {
+    font-size: 30px;
+    color: #fff;
+    padding: 0 20px;
+    line-height: 100px;
+    margin-bottom: 0;
+  }
+  .header-menu {
+    list-style: none;
+    display: flex;
+    padding: 0 30px;
+    margin-bottom: 0;
+    .menu-item {
+      color: #bcc9d4;
+      line-height: 60px;
+      cursor: pointer;
+      padding: 0 30px;
+      font-size: 18px;
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+      &::after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        background: #0091fc;
+        bottom: -3px;
+        left: 0;
+        transition: bottom 0.3s ease;
+      }
+      &:hover,
+      &.active {
+        color: #0091fc;
+        &::after {
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
