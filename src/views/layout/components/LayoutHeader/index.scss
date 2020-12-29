@@ -20,6 +20,9 @@
       position: relative;
       overflow: hidden;
       user-select: none;
+      .menu-text {
+        margin-left: 6px;
+      }
       &::after {
         content: "";
         display: block;

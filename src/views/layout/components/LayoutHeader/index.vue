@@ -9,7 +9,8 @@
         :class="{ active: item.path === activeMenuPath }"
         @click="menuJump(item.path)"
       >
-        {{ item.name }}
+        <a-icon :type="item.icon" />
+        <span class="menu-text">{{ item.name }}</span>
       </li>
     </ul>
   </div>

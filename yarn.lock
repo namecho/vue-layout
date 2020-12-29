@@ -7695,6 +7695,11 @@ static-extend@^0.1.1:
   resolved "https://registry.npm.taobao.org/statuses/download/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
 
+storejs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/storejs/download/storejs-1.1.0.tgz?cache=0&sync_timestamp=1607939404512&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstorejs%2Fdownload%2Fstorejs-1.1.0.tgz#f63be43c747c14be3a7b17018392938091d64679"
+  integrity sha1-9jvkPHR8FL46excBg5KTgJHWRnk=
+
 stream-browserify@^2.0.1:
   version "2.0.2"
   resolved "https://registry.npm.taobao.org/stream-browserify/download/stream-browserify-2.0.2.tgz#87521d38a44aa7ee91ce1cd2a47df0cb49dd660b"

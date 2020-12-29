@@ -9,6 +9,7 @@ export default new Vuex.Store({
       {
         id: 1,
         name: "项目管理",
+        icon: "appstore",
         path: "/project-manage",
         children: [
           { id: 1, name: "项目列表", path: "/project-manage/project-list" },
@@ -18,6 +19,7 @@ export default new Vuex.Store({
       {
         id: 2,
         name: "数据管理",
+        icon: "database",
         path: "/data-manage",
         children: [
           {
