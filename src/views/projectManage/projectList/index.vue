@@ -44,11 +44,16 @@
     </ul>
     <a-modal
       :title="modal.title"
-      :visible="modal.visible"
+      :visible.sync="modal.visible"
       :width="modal.width"
-      :footer="null"
+      destroyOnClose
+      okText="确定"
+      cancelText="取消"
+      @cancel="modalCancel"
+      @ok="modalOk"
+      :confirm-loading="modal.confirmLoading"
     >
-      <component :is="modal.component"></component>
+      <component ref="modalComponent" :is="modal.component"></component>
     </a-modal>
   </div>
 </template>
@@ -63,17 +68,14 @@ export default {
         title: "",
         visible: false,
         width: 1000,
-        component: ""
-      }
+        component: "",
+        confirmLoading: false
+      },
+      projectList: []
     };
   },
-  computed: {
-    projectList() {
-      return [
-        { id: 1, name: "项目一" },
-        { id: 2, name: "项目二" }
-      ];
-    }
+  created() {
+    this.getProject();
   },
   methods: {
     addProject() {
@@ -82,8 +84,30 @@ export default {
       this.modal.component = "addProject";
       this.modal.visible = true;
     },
+    getProject() {
+      this.projectList = this.$local.get("project-list") || [];
+    },
     deleteProject(id) {
-      console.log(id);
+      this.projectList.splice(
+        this.projectList.findIndex(obj => obj.id === id),
+        1
+      );
+      this.$local.set("project-list", this.projectList);
+    },
+    modalCancel() {
+      this.modal.visible = false;
+    },
+    async modalOk() {
+      this.modal.confirmLoading = true;
+      try {
+        await this.$refs.modalComponent.save();
+        this.getProject();
+        this.modal.visible = false;
+      } catch (error) {
+        this.modal.confirmLoading = false;
+      } finally {
+        this.modal.confirmLoading = false;
+      }
     }
   }
 };
