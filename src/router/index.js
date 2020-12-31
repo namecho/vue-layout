@@ -42,6 +42,11 @@ const routes = [
         ]
       }
     ]
+  },
+  {
+    path: "/canvas/:id",
+    name: "Canvas",
+    component: () => import("@/views/canvas")
   }
 ];
 

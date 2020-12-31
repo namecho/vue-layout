@@ -7,7 +7,7 @@
     </div>
     <ul class="list">
       <li class="item" v-for="item in projectList" :key="item.id">
-        <div class="preview">
+        <div class="preview" @click="openCanvas(item.id)">
           <a-icon class="icon" type="edit" />
         </div>
         <div class="handle">
@@ -108,6 +108,9 @@ export default {
       } finally {
         this.modal.confirmLoading = false;
       }
+    },
+    openCanvas(id) {
+      this.$router.push({ path: "/canvas/" + id });
     }
   }
 };
